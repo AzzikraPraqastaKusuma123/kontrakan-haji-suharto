@@ -1,0 +1,23 @@
+{
+    "name": "kontrakan-haji-suharto",
+    "version": "1.0.0",
+    "description": "Website profil Kontrakan Haji Suharto Kembangan Selatan",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js",
+        "build": "node build.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.27",
+        "cssnano": "^7.1.2",
+        "fs-extra": "^11.3.3",
+        "html-minifier": "^4.0.0",
+        "nodemon": "^3.0.1",
+        "postcss-cli": "^11.0.1",
+        "terser": "^5.46.0"
+    }
+}
