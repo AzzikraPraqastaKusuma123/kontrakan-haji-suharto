@@ -1502,3 +1502,417 @@ strong {
         opacity: 0;
     }
 }
+
+/* ==========================================================================
+   RESPONSIVE — TABLET (max 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    :root {
+        --pad: 2rem;
+        --pad-y: 5rem;
+    }
+
+    .tentang {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .t-left {
+        padding-right: 0;
+    }
+
+    .tp-grid {
+        display: none;
+    }
+
+    .fas-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+    }
+
+    .fas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fg-card-wide {
+        grid-column: span 1;
+    }
+
+    .galeri-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .lok-body {
+        grid-template-columns: 1fr;
+    }
+
+    .lok-map {
+        min-height: 350px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE — MOBILE (max 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    :root {
+        --pad: 1.25rem;
+        --pad-y: 4rem;
+    }
+
+    /* UMUM */
+    html {
+        font-size: 15px;
+    }
+
+    /* NAVBAR */
+    .nav {
+        padding: 1.25rem var(--pad);
+        mix-blend-mode: normal;
+        background: rgba(31, 34, 26, 0.95);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-tagline {
+        display: none;
+    }
+
+    /* HERO */
+    .hero {
+        align-items: flex-end;
+        padding: 0 var(--pad) 6rem;
+        min-height: 100svh;
+    }
+
+    .hero-body {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+    }
+
+    .ht-line.italic {
+        padding-left: 5%;
+    }
+
+    .hero-sub {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .hero-actions .btn-pill {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-sidebar {
+        display: none;
+    }
+
+    /* STATS STRIP */
+    .strip {
+        flex-wrap: wrap;
+    }
+
+    .strip-item {
+        flex: 0 0 50%;
+        padding: 2rem 1rem;
+        border-bottom: 1px solid var(--line-color);
+    }
+
+    .strip-divider {
+        display: none;
+    }
+
+    .strip-item:nth-child(1),
+    .strip-item:nth-child(3) {
+        border-right: 1px solid var(--line-color);
+    }
+
+    .si-num {
+        font-size: 2.5rem;
+    }
+
+    /* TENTANG */
+    .tentang {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: var(--pad-y) var(--pad);
+    }
+
+    .t-left {
+        padding-right: 0;
+    }
+
+    .tp-main {
+        aspect-ratio: 4/3;
+    }
+
+    .tp-badge {
+        width: 90px;
+        height: 90px;
+        top: -1.5rem;
+        right: 1rem;
+    }
+
+    .tpb-year {
+        font-size: 1.4rem;
+    }
+
+    .t-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .t-body {
+        font-size: 1rem;
+    }
+
+    .btn-arrow {
+        font-size: 1rem;
+    }
+
+    /* FASILITAS */
+    .fasilitas {
+        padding: var(--pad-y) var(--pad);
+    }
+
+    .fas-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+        margin-bottom: 2.5rem;
+    }
+
+    .fas-header .f-number {
+        font-size: 5rem;
+    }
+
+    .fas-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .fas-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .fg-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .fg-card-wide {
+        grid-column: span 1;
+    }
+
+    /* GALERI */
+    .galeri {
+        padding: var(--pad-y) var(--pad);
+    }
+
+    .galeri-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+
+    .galeri-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .galeri-masonry {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .gm-col {
+        gap: 1rem;
+    }
+
+    .gm-col-offset {
+        margin-top: 0;
+    }
+
+    /* LOKASI */
+    .lokasi {
+        padding: var(--pad-y) var(--pad);
+    }
+
+    .lok-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+        margin-bottom: 2.5rem;
+    }
+
+    .lok-body {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .lok-info {
+        padding: 0;
+    }
+
+    .lib-val {
+        font-size: 0.9rem;
+    }
+
+    .li-btns {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .li-btns .btn-pill {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .lok-map {
+        min-height: 280px;
+    }
+
+    .map-pin-overlay {
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+    }
+
+    .mpo-label {
+        font-size: 0.7rem;
+        padding: 0.6rem 1rem;
+        text-align: center;
+    }
+
+    /* KONTAK */
+    .kontak {
+        padding: 5rem var(--pad);
+    }
+
+    .kontak-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .kontak-sub {
+        font-size: 0.95rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .kontak-cards {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .kc-card {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .kcc-num {
+        font-size: 1.2rem;
+    }
+
+    /* FOOTER */
+    .footer {
+        padding: 4rem var(--pad) 2rem;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .ftb-logo {
+        font-size: 2.5rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+
+    /* FLOATING WA */
+    .fab-wa {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 52px;
+        height: 52px;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE — SMALL MOBILE (max 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+    :root {
+        --pad: 1rem;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 12vw, 3rem);
+    }
+
+    .strip-item {
+        flex: 0 0 50%;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .si-num {
+        font-size: 2rem;
+    }
+
+    .fg-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .kc-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .hero-actions .btn-pill {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .btn-pill {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .nav-menu {
+        padding: 5rem var(--pad);
+    }
+
+    .nm-link {
+        font-size: clamp(2rem, 10vw, 3.5rem);
+    }
+}
