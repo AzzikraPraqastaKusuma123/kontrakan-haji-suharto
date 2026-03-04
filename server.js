@@ -31,14 +31,13 @@ app.use(
                 fontSrc: ["'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com", "data:"],
                 imgSrc: ["'self'", "data:", "https://maps.googleapis.com", "https://maps.gstatic.com", "https://*.google.com", "https://*.ggpht.com"],
                 frameSrc: ["https://maps.google.com", "https://www.google.com"],
-                frameAncestors: ["'none'"],
                 connectSrc: ["'self'", "https://maps.googleapis.com"],
                 objectSrc: ["'none'"],
                 baseUri: ["'self'"],
                 formAction: ["'self'"]
             }
         },
-        frameguard: { action: 'deny' },
+        frameguard: { action: 'sameorigin' },
         noSniff: true,
         xssFilter: true,
         dnsPrefetchControl: { allow: false },
@@ -55,7 +54,7 @@ app.use(
 
 // 4. Header tambahan manual
 app.use((req, res, next) => {
-    res.setHeader('X-Frame-Options', 'DENY');
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
     res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=(), payment=(), usb=()');
     next();
