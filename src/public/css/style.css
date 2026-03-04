@@ -1,21 +1,21 @@
 @charset "UTF-8";
 
 :root {
-        --bg-main: #fcfbf9;
-        --bg-dark: #1f221a;
-        --text-main: #2b2e26;
-        --text-mute: #727668;
-        --accent: #b45309;
-        --accent-light: #fef3c7;
+    --bg-main: #fcfbf9;
+    --bg-dark: #1f221a;
+    --text-main: #2b2e26;
+    --text-mute: #727668;
+    --accent: #b45309;
+    --accent-light: #fef3c7;
     --line-color: #e4e2db;
-    
-        --f-serif: 'Fraunces', serif;
+
+    --f-serif: 'Fraunces', serif;
     --f-sans: 'DM Sans', sans-serif;
 
-        --pad: clamp(1.5rem, 4vw, 4rem);
+    --pad: clamp(1.5rem, 4vw, 4rem);
     --pad-y: clamp(4rem, 10vw, 8rem);
 
-        --dur-fast: 0.3s;
+    --dur-fast: 0.3s;
     --dur-slow: 0.8s;
     --ease: cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -38,7 +38,6 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 img {
