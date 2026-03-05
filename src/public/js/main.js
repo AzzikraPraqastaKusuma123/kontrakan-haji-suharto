@@ -1,4 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
+
+
+
     const loaderFill = document.getElementById('loaderFill');
     const loader = document.getElementById('loader');
 
@@ -17,7 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             loaderFill.style.width = loadProgress + '%';
         }
-    }, 100);
+    }, 100);
+
+
+
     const cursor = document.getElementById('cursor');
     const cursorDot = document.getElementById('cursorDot');
 
@@ -29,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 cursorDot.style.left = e.clientX + 'px';
                 cursorDot.style.top = e.clientY + 'px';
             }
-        });
+        });
+
         const darkSections = [document.querySelector('.fasilitas'), document.querySelector('.hero'), document.querySelector('.kontak'), document.querySelector('.footer')];
 
         document.addEventListener('mousemove', (e) => {
@@ -63,7 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 cursorDot && cursorDot.classList.remove('hovered');
             });
         });
-    }
+    }
+
+
+
     const nav = document.getElementById('nav');
     let lastScroll = 0;
 
@@ -85,7 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
         navBurger.classList.toggle('open');
         navMenu.classList.toggle('open');
         if (navMenu.classList.contains('open')) {
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+
             nav.style.mixBlendMode = 'normal';
         } else {
             document.body.style.overflow = '';
@@ -100,7 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
             setTimeout(() => nav.style.mixBlendMode = 'difference', 800);
         });
-    });
+    });
+
+
+
     const slides = document.querySelectorAll('.hb-slide');
     const slideNum = document.getElementById('slideNum');
     let curSlide = 0;
@@ -112,7 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
             slides[curSlide].classList.add('active');
             slideNum.textContent = '0' + (curSlide + 1);
         }, 6000);
-    }
+    }
+
+
+
     const reveals = document.querySelectorAll('.reveal');
     const counters = document.querySelectorAll('.si-num');
     let counted = false;
@@ -122,8 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                if (entry.target.classList.contains('lok-info') && !counted) {
+                entry.target.classList.add('active');
+
+                if (entry.target.classList.contains('lok-info') && !counted) {
+
                 }
 
                 observer.unobserve(entry.target);
@@ -131,7 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, obsOptions);
 
-    reveals.forEach(el => observer.observe(el));
+    reveals.forEach(el => observer.observe(el));
+
     const strip = document.querySelector('.strip');
     const stripObs = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && !counted) {
@@ -150,7 +170,36 @@ document.addEventListener('DOMContentLoaded', () => {
             stripObs.disconnect();
         }
     }, { threshold: 0.5 });
-    if (strip) stripObs.observe(strip);
+    if (strip) stripObs.observe(strip);
+
+    const tpMainImg = document.querySelector('.tp-main img');
+    if (tpMainImg) {
+        const tpImages = [
+            '/img/kontrakan-foto-2.jpg',
+            '/img/kontrakan-foto-4.jpg',
+            '/img/kontrakan-foto-5.jpg',
+            '/img/kontrakan-foto-1.jpg',
+            '/img/kontrakan-foto-3.jpg'
+        ];
+        let tpIndex = 0;
+
+        tpMainImg.style.transition = 'opacity 0.8s ease-in-out';
+
+        setInterval(() => {
+            if (window.innerWidth <= 768) {
+                tpMainImg.style.opacity = 0;
+
+                setTimeout(() => {
+                    tpIndex = (tpIndex + 1) % tpImages.length;
+                    tpMainImg.src = tpImages[tpIndex];
+                    tpMainImg.style.opacity = 1;
+                }, 800);
+            }
+        }, 50000); // 50000ms = 50 detik
+    }
+
+
+
 });
 
 function openLB(src, cap) {
