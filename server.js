@@ -72,7 +72,7 @@ app.use((req, res, next) => {
 
 // 6. Static files (tanpa directory listing, tanpa akses dotfiles)
 app.use(express.static(path.join(__dirname, 'src', 'public'), {
-    maxAge: '7d',
+    maxAge: isProd ? '7d' : 0, // Matikan cache saat development agar perubahan langsung terlihat!
     etag: true,
     index: false,
     dotfiles: 'deny'
