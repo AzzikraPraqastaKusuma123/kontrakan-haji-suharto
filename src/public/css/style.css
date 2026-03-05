@@ -378,7 +378,8 @@ strong {
 .nav-desktop {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 3.5rem;
+    /* Beri jarak lebih lega agar terlihat elegan */
 }
 
 .nav-desktop li {
@@ -386,42 +387,53 @@ strong {
 }
 
 .nav-desktop a {
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    /* Sedikit lebih kecil agar lebih premium */
+    font-weight: 400;
+    /* Tidak terlalu tebal */
     text-transform: uppercase;
     letter-spacing: 0.15em;
     position: relative;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
     color: #fff;
-    transition: opacity 0.3s var(--ease);
+    transition: opacity 0.4s var(--ease);
 }
 
+.nav-desktop a:hover {
+    opacity: 0.8;
+}
+
+/* Garis bawah animasi tipis elegan */
 .nav-desktop a:not(.btn-nav-outline)::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0;
-    height: 1.5px;
+    height: 1px;
+    /* Dibuat lebih tipis */
     background: #fff;
-    transition: width 0.3s var(--ease);
+    transition: width 0.5s var(--ease);
 }
 
 .nav-desktop a:not(.btn-nav-outline):hover::after {
     width: 100%;
 }
 
+/* Tombol Kontak Khusus di Header */
 .nav-desktop a.btn-nav-outline {
     border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 0.6rem 1.4rem;
+    padding: 0.75rem 1.8rem;
     border-radius: 50px;
-    transition: all 0.3s var(--ease);
+    transition: all 0.5s var(--ease);
 }
 
 .nav-desktop a.btn-nav-outline:hover {
     background: #fff;
-    color: var(--text-main);
+    color: #000;
+    /* Menggunakan #000 agar saat terinversi (mix-blend-mode) terlihat pas dengan hitam atau putih */
     border-color: #fff;
+    opacity: 1;
 }
 
 .nav-menu {
