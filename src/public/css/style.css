@@ -1681,6 +1681,12 @@ strong {
         padding-right: 0;
     }
 
+    .tentang-logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .tp-main {
         aspect-ratio: 4/3;
     }
