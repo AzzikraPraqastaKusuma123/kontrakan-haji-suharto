@@ -341,7 +341,8 @@ strong {
 .nav-burger {
     width: 40px;
     height: 40px;
-    display: flex;
+    display: none;
+    /* Disembunyikan pada Desktop */
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
@@ -369,6 +370,58 @@ strong {
 .nav-burger.open .burger-line:nth-child(2) {
     transform: translateY(-4px) rotate(-45deg);
     width: 100%;
+}
+
+/* ==========================================================================
+   DESKTOP NAVBAR MENU
+   ========================================================================== */
+.nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav-desktop li {
+    list-style: none;
+}
+
+.nav-desktop a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position: relative;
+    padding-bottom: 5px;
+    color: #fff;
+    transition: opacity 0.3s var(--ease);
+}
+
+.nav-desktop a:not(.btn-nav-outline)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1.5px;
+    background: #fff;
+    transition: width 0.3s var(--ease);
+}
+
+.nav-desktop a:not(.btn-nav-outline):hover::after {
+    width: 100%;
+}
+
+.nav-desktop a.btn-nav-outline {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    transition: all 0.3s var(--ease);
+}
+
+.nav-desktop a.btn-nav-outline:hover {
+    background: #fff;
+    color: var(--text-main);
+    border-color: #fff;
 }
 
 .nav-menu {
@@ -1532,6 +1585,15 @@ strong {
     .tentang {
         grid-template-columns: 1fr;
         gap: 4rem;
+    }
+
+    /* MATIKAN MENU DESKTOP & NYALAKAN BURGER MENU DI TABLET/HP */
+    .nav-desktop {
+        display: none;
+    }
+
+    .nav-burger {
+        display: flex;
     }
 
     .t-left {
