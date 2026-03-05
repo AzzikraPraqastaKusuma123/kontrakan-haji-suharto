@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     tpMainImg.style.opacity = 1;
                 }, 800);
             }
-        }, 50000); // 50000ms = 50 detik
+        }, 15000); // 15000ms = 15 detik
     }
 
 
